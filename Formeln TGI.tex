@@ -4,6 +4,7 @@
 
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \begin{document}
 \begin{landscape}
 
@@ -21,7 +22,8 @@ Strom-Teiler: $\frac{I_1}{I_2} = \frac{R_2}{R_1}$\\
 Leistung: $P =U*I = \frac{U^2}{R} = I^2*R $ \\
 \phantom{ssssssssss} $[P] = 1V*A =1 W$\\
 \underline{\textbf{Kondensator:}}\\
-Kapazität: $C = \frac{Q}{U}, [C]=1F$\\
+Kapazität: $C = \frac{Q}{U} = \frac{\varepsilon * h * b}{d},$\\
+\phantom{ssssssssssii} $[C]=1F$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
 % TODO Eher Felder?
 Stromdichte: $S=\frac{I}{A}$\\
@@ -35,13 +37,31 @@ Ladung pro Millimeter: $Q = \rho * V, [Q] = 1C$\\
 $e^-$-Geschwindigkeit: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
 Flussdichte: $B=\mu*H, [B] = 1 \frac{Vs}{m^2}$\\
 
-% v = S/\roh
+
 $\tau = R*C$\\
 Zeit Auf-/Entlanden: $t = 3\tau$\\
 
 \end{minipage}%
 ~~~~~~~
 \begin{minipage}{0.3\textwidth}
+
+\underline{\textbf{Maschenstromanalyse}}\\
+1. Stelle Maschen auf
+2. Für jede Masche Maschensatz aufstellen
+3. Forme Gleichungen so um, dass alle Terme mit einem I auf einer Seite stehen, und alle ohne auf der anderen
+4. $\begin{bmatrix}
+	I_C\\
+	I_D\\
+\end{bmatrix} = \frac{1}{\sum R_iR_j} * \begin{bmatrix}
+	11 & 12\\ % TODO Wie ist diese Matrix aufgebaut?
+	21 & 22\\
+\end{bmatrix} * \begin{bmatrix}
+	Term~ohne~I_C\\
+	Term~ohne~I_D\\
+\end{bmatrix} 
+ $\\
+ % TODO Wie Gleichungen daraus?
+
 \underline{\textbf{Leitungen:}}\\
 $k_0 = \frac{R_w}{R_w + R_i} $\\
 $r_a = \frac{R_a - R_w}{R_a + R_w} $\\
