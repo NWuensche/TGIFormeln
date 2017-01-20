@@ -7,7 +7,6 @@
 \usepackage{amsmath}
 \begin{document}
 %\begin{landscape}
-
 \begin{minipage}{0.45\textwidth}
 \underline{\textbf{Grundformeln}}\\
 WS: $R = \frac{U}{I} = \frac{\rho \cdot l}{A}$; $[R] = 1\frac{V}{A} =1 \Omega$ \\
@@ -35,10 +34,14 @@ Kond. in Reihe: $C_{ges} = C_1 || C_2$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
 \\
 $\tau = R \cdot C$\\
+Wenn WS in Reihe, trotzdem in der Rechnung für $\tau$ wie parallel\\
 Zeit Auf-/Entlanden: $t = 3\tau$\\
+$t_1 = \frac{1}{2} \cdot \frac{1}{T} = \frac{1}{2} * f$
 Arbeit(=Energie): $W = \int_0^\infty P dt$\\
-\phantom{sssssssss} $= \frac{U_b^2 \cdot C}{2} $
+\phantom{sssssssss} $= \frac{U_b^2 \cdot C}{2} $\\
+\phantom{sssssssss} $= [W] = 1J $\\
 $W_{Zyklus} = W_a + W_e$\\
+$U_a(t) = k_1 + k_2 \cdot e^{\frac{t-t_0}{\tau}}$
 % TODO Wann ist aufladen mit U(1-e) und wann k1 + k2*e?
 
 \underline{\textbf{Felder: }}\\
@@ -103,6 +106,7 @@ $R_W = \sqrt{\frac{L'}{C'}}$\\
 $U_D = 0$
 \includegraphics[scale=0.40]{ISTOV.png}
 \includegraphics[scale=0.40]{NISTOV.png}
+\includegraphics[scale=0.40]{Zehnerpotenzen.jpg}
 % TODO U_D = ?
 \end{minipage}%
 
