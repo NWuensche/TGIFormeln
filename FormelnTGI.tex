@@ -8,8 +8,9 @@
 \begin{document}
 %\begin{landscape}
 \begin{minipage}{0.45\textwidth}
+
 \underline{\textbf{Grundformeln}}\\
-WS: $R = \frac{U}{I} = \frac{\rho \cdot l}{A}$; $[R] = 1\frac{V}{A} =1 \Omega$ \\
+WS: $R = \frac{U}{I} = \frac{\rho \cdot l}{A}$; $[R] = 1\frac{V}{A} =1 \Omega$\\
 Leitwert: $G = \frac{1}{R}$\\
 Maschensatz: $\sum U_i = 0$\\
 Knotensatz: $\sum I_i = 0$\\
@@ -20,6 +21,8 @@ Spannungs-Teiler: $\frac{U_1}{U_2} = \frac{R_1}{R_2}$\\
 Strom-Teiler: $\frac{I_1}{I_2} = \frac{R_2}{R_1}$\\
 Leistung: $P =U \cdot I = \frac{U^2}{R} = I^2 \cdot R $ \\
 \phantom{ssssssssss} $[P] = 1V \cdot A =1 W$\\
+Wenn kein Strom fließt, ist U in Masche gleich!\\
+
 \underline{\textbf{Kondensator:}}\\
 Kapazität: $C = \frac{Q}{U} = \frac{\varepsilon \cdot A }{d},$\\
 \phantom{ssssssssssii} $[C]=1F$\\
@@ -32,7 +35,7 @@ Spannung: $U = \frac{Q}{C}$\\
 Kond. parallel: $C_{ges} = C_1 + C_2$\\
 Kond. in Reihe: $C_{ges} = C_1 || C_2$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
-\\
+"eingeschwungen" $\Rightarrow i = 0$\\
 $\tau = R \cdot C$\\
 Wenn WS in Reihe, trotzdem in der Rechnung für $\tau$ wie parallel\\
 Zeit Auf-/Entlanden: $t = 3\tau$\\
@@ -41,8 +44,9 @@ Arbeit(=Energie): $W = \int_0^\infty P dt$\\
 \phantom{sssssssss} $= \frac{U_b^2 \cdot C}{2} $\\
 \phantom{sssssssss} $= [W] = 1J $\\
 $W_{Zyklus} = W_a + W_e$\\
-$U_a(t) = k_1 + k_2 \cdot e^{\frac{t-t_0}{\tau}}$
-% TODO Wann ist aufladen mit U(1-e) und wann k1 + k2*e?
+$U_a(t) = k_1 + k_2 \cdot e^{\frac{t-t_0}{\tau}}$\\
+Berechne $k_1$ durch $t \rightarrow \infty$,\\
+$k_2$ durch $t = 0$\\
 
 \underline{\textbf{Felder: }}\\
 Stromdichte: $S=\frac{I}{A}$\\
@@ -55,9 +59,6 @@ Kraft pro Leitungslänge: $F=Q \cdot v \cdot B, [F] = 1N$\\
 Ladung pro Millimeter: $Q = \rho \cdot V, [Q] = 1C$\\
 $e^-$-Geschwindigkeit: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
 Flussdichte: $B=\mu \cdot H, [B] = 1 \frac{Vs}{m^2}$\\
-
-
-
 
 \end{minipage}%
 ~~~~~~~
@@ -79,28 +80,35 @@ Flussdichte: $B=\mu \cdot H, [B] = 1 \frac{Vs}{m^2}$\\
 \end{bmatrix} 
  $\\
  % TODO Wie Gleichungen daraus?
+ 
+ \underline{\textbf{(Koaxial-)Leitungen}}:\\
+$R_W = \sqrt{\frac{L'}{C'}}$\\
+    \phantom{sssi} $=\frac{\sqrt{\epsilon_R \cdot \mu_R}}{c_0 \cdot C'}$\\
+    \phantom{sssi} $=\frac{\sqrt{\mu_R} \cdot ln(\frac{d_a}{d_i})}{2c_0 \cdot \pi \cdot \epsilon_0 \cdot \sqrt{\epsilon_R}}$\\
+% Gleichung C', L'
 
-\underline{\textbf{Leitungen:}}\\
+
 $k_0 = \frac{R_w}{R_w + R_i} $\\
 $r_a = \frac{R_a - R_w}{R_a + R_w} $\\
 $k_a = 1 + r_a$\\
 Anfang: $U_k(0,t)=k_0 \cdot U_{q1}(t)$\\
-Ende: $U_k(x,t)= k_0 \cdot U_{q1}(t-\Delta t)$
+Ende: $U_k(x,t)= k_0 \cdot U_{q1}(t-\Delta t)$\\
+$\Delta t = \frac{l}{c}$\\
 Auskoppeln Gatter:\\
 \phantom{ss} $U_1(t) = k_a \cdot U_1(x,t)$\\
-$\Delta t = l/c$\\
-%Aufladen über WS: $
+Lichtwellenleitung: $\alpha = \frac{L_P}{l}, [\alpha] = 1 \frac{dB}{m}$\\
+Lichtleistung: $L_P = 10 \cdot lg\frac{P_e}{P_a} dB\\ L_P = l \cdot \alpha$\\
+$ [L_P] = 1dB$\\
+Tiefpass: Oben R, Mitte C
 
-\underline{\textbf{Koaxialkabel}}:\\
-$R_W = \sqrt{\frac{L'}{C'}}$\\
-    \phantom{sssi} $=\frac{\sqrt{\epsilon_R \cdot \mu_R}}{c_0 \cdot C'}$\\
-    \phantom{sssi} $=\frac{\sqrt{\mu_R} \cdot ln(\frac{d_a}{d_i})}{2c_0 \cdot \pi \cdot \epsilon_0 \cdot \sqrt{\epsilon_R}}$\\
+
+
 
 
 \end{minipage}%
 ~~~~~~
 \begin{minipage}{0.3\textwidth}
-\underline{\textbf{Operationsverstärker}}:\\
+\underline{\textbf{Operationsverstärker:}}\\
 \includegraphics[scale=0.40]{IOV.png}
 \includegraphics[scale=0.40]{NIOV.png}
 $U_D = 0$
@@ -108,6 +116,43 @@ $U_D = 0$
 \includegraphics[scale=0.40]{NISTOV.png}
 \includegraphics[scale=0.40]{Zehnerpotenzen.jpg}
 % TODO U_D = ?
+\end{minipage}%
+
+\newpage
+% TODO Dürfen wir 2 Seiten(1 Blatt) nutzen?
+\begin{minipage}{0.3\textwidth}
+
+\underline{\textbf{Diode:}}\\
+Gesperrt: $U_D < U_{F_0}$\\
+Leitend: $\Rightarrow U_D = U_{F_0}$\\
+Diodenspannung fällt in Richtung Spitze ab
+Reale Diode sperrt: $\Rightarrow I_D = -I_S$
+
+\underline{\textbf{Transistor:}}\\
+$I_G \stackrel{!}{=} 0A$\\
+n-Kanal:\\
+\phantom{ss} Pfeil auf Gate\\
+\phantom{ss} Sperrt: $U_{GS} < U_{th}$
+\phantom{ss} Leitet: $\Rightarrow U_{DS} \geq 0$\\
+\phantom{sssssisisssi}$\Rightarrow I_D \geq 0$\\
+
+\[I_D = \left\{
+  \begin{array}{lr}
+    0 & : U_{GS} < U_{th}~Sperrbereich\\
+    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & : U_{DS} \ge U_{GS} - U_{th} pinch-off\\
+       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & : U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
+  \end{array}
+\right.
+\]
+
+p-Kanal:\\
+\phantom{ss} Pfeil von Gate weg\\
+\phantom{ss} Sperrt: $U_{GS} > U_{th}$
+\phantom{ss} Leitet: $\Rightarrow U_{DS} \leq 0$\\
+\phantom{sssssisisssi}$\Rightarrow I_D \leq 0$\\
+
+Source-Drain bestimmen: Potenziale berechnen
+%I_D =
 \end{minipage}%
 
 %\end{landscape}
