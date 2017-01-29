@@ -118,6 +118,8 @@ $U_D = 0 \Rightarrow I_N = 0, U_N = 0$
 \includegraphics[scale=0.40]{ISTOV.png}
 \includegraphics[scale=0.40]{NISTOV.png}
 $U_A \in \{U_B,0\}$
+% TODO 10.1
+!Invertierter ST wird trotz Negation nicht noch einmal invertiert
 $U_D = 0 = U_P - U_{E_{HL}}$\\
 \phantom{sssi}$U_{E_{HL}} = \frac{\Rightarrow U_{A_{max}} \cdot R_2}{R_1 + R_2}$\\
 $U_D = 0 = U_P - U_{E_{LH}}$\\
@@ -179,6 +181,7 @@ OBDD: Nutze Shannon
 \phantom{ss} $\Rightarrow$ Mache aus geg. Formel neue Formeln, wo für 1. Variable 0 oder 1 angenommen wird. $\rightarrow$ Mache aus diesen Formeln neue Formeln, bei denen 2. Variable 0 oder 1 angenommen wird.\\
 \phantom{ss} $\Rightarrow$ Jede Ebene von Funktionen ist 1 Ebene im Baum ist eine Ebene von Multiplexern. In x.ter Ebene ist x. Variable Schaltvariable an Mutliplexer\\
 KV-Diagramme: Grey-Code, !Rechtecke! müssen 2-er Potenzen als Seitenlänge haben.
+Grey-Code:(Not A, Not B), (Not A, B), (A,B), (A, Not B)\\
 \underline{\textbf{Flip-Flop:}}\\
 Zeitstuerung: ((1)|(2)-takt-(zustands)|(flanken))|(Nicht takt) - gesteurtes FF
 Datenstuerung: Delay, Toggle (1 Eingang), R-S, J-K (2 Eingänge) FF
@@ -191,7 +194,19 @@ Falls nicht Moore, dann Mealy\\
 Synchron: Er hat Takt\\
 Asynchron: Er hat keinen Takt\\
 Autonom: Kein eigener Eingang\\
+flankengestuerte FF meist durch MS-FF realisiert
 % Speicher nicht Übung, aber dennoch in Klausur
+\underline{\textbf{Zustandsgraph:}}\\
+Ist im Prinzip totaler DFA\\
+Kann Startzustand haben oder nicht.\\
+K's(Binärcodierte Eingänge) sind Zustände\\
+Kodiere getaktete Ausgänge als Binärzahl, schreibe Ausgang an jeden Zustand\\
+Ungetaktete Ausgänge an Pfeile schreiben\\
+An Pfeil muss Belegung der Eingänge\\
+One Hot Kodierung:
+Für jeden Zustand genau ein FF an. Falls (0,0,0,...) Startzustand, dann muss FF0 immer 1 sein, außer wenn Zustand 0 ist, dann ist alles 0
+% TODO Vielleicht 2 Seiten mit je nur 2 Spalten?
+
 
 \end{minipage}%
 
