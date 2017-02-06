@@ -1,15 +1,16 @@
 \documentclass[11pt]{article}
 
-\usepackage{lscape}
-
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\begin{document}
-%\begin{landscape}
-\begin{minipage}{0.45\textwidth}
+\usepackage[top=1in, bottom=1.25in, left=1.25cm, right=1.25in]{geometry}
 
-\underline{\textbf{Grundformeln}}\\
+
+\begin{document}
+
+\begin{minipage}{0.33\textwidth}
+
+\underline{\textbf{Grundformeln:}}\\
 WS: $R = \frac{U}{I} = \frac{\rho \cdot l}{A}$; $[R] = 1\frac{V}{A} =1 \Omega$\\
 Leitwert: $G = \frac{1}{R}$\\
 Maschensatz: $\sum U_i = 0$\\
@@ -37,9 +38,9 @@ Kond. in Reihe: $C_{ges} = C_1 || C_2$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
 "eingeschwungen" $\Rightarrow i = 0$\\
 $\tau = R \cdot C$\\
-Wenn WS in Reihe, trotzdem in der Rechnung für $\tau$ wie parallel\\
+\phantom{ss}falls WS in Reihe $\Rightarrow$ parallel\\
 Zeit Auf-/Entlanden: $t = 3\tau$\\
-$t_1 = \frac{1}{2} \cdot \frac{1}{T} = \frac{1}{2} \cdot f$
+$t =\frac{1}{2T} = \frac{f}{2}$\\
 Arbeit(=Energie): $W = \int_0^\infty P dt$\\
 \phantom{sssssssss} $= \frac{U_b^2 \cdot C}{2} $\\
 \phantom{sssssssss} $= [W] = 1J $\\
@@ -48,38 +49,23 @@ $U_a(t) = k_1 + k_2 \cdot e^{\frac{t-t_0}{\tau}}$\\
 Berechne $k_1$ durch $t \rightarrow \infty$,\\
 $k_2$ durch $t = 0$\\
 
-\underline{\textbf{Felder: }}\\
+Tiefpass: Oben R, Mitte C
+\end{minipage}%
+~~~~~~~
+\begin{minipage}{0.33\textwidth}
+%\vspace{-11.5 cm}
+
+\underline{\textbf{Felder:}}\\
 Stromdichte: $S=\frac{I}{A}$\\
 Feldstärke: $E=\frac{S}{\kappa}$\\
 Spannungsabfall: $U=E \cdot l$\\
-    Potenzial: $\varphi (x)= \int_x^0 E(s)ds + \varphi(0)$\\
+Pot.: $\varphi (x)= \int_x^0 E(s)ds + \varphi(0)$\\
 Stromstärke: $I = \oint H ds = H \cdot 2\pi r$\\
 Magnetische Feldstärke: $H = \frac{I}{2\pi d}, [H] = 1\frac{A}{m}$\\
 Kraft pro Leitungslänge: $F=Q \cdot v \cdot B, [F] = 1N$\\
-Ladung pro Millimeter: $Q = \rho \cdot V, [Q] = 1C$\\
-$e^-$-Geschwindigkeit: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
+Ladung pro mm: $Q = \rho \cdot V$\\
+$e^-$-Gesch.: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
 Flussdichte: $B=\mu \cdot H, [B] = 1 \frac{Vs}{m^2}$\\
-
-\end{minipage}%
-~~~~~~~
-\begin{minipage}{0.3\textwidth}
-
-\underline{\textbf{Maschenstromanalyse}}\\
-1. Stelle Maschen auf
-2. Für jede Masche Maschensatz aufstellen
-3. Forme Gleichungen so um, dass alle Terme mit einem I auf einer Seite stehen, und alle ohne auf der anderen
-4. $\begin{bmatrix}
-	I_C\\
-	I_D\\
-\end{bmatrix} = \frac{1}{\sum R_iR_j} \cdot \begin{bmatrix}
-	11 & 12\\ % TODO Wie ist diese Matrix aufgebaut?
-	21 & 22\\
-\end{bmatrix} \cdot \begin{bmatrix}
-	Term~ohne~I_C\\
-	Term~ohne~I_D\\
-\end{bmatrix} 
- $\\
- % TODO Wie Gleichungen daraus?
  
  \underline{\textbf{(Koaxial-)Leitungen}}:\\
 $R_W = \sqrt{\frac{L'}{C'}}$\\
@@ -89,8 +75,7 @@ $R_W = \sqrt{\frac{L'}{C'}}$\\
 $C = \frac{1}{\sqrt{L' \cdot C'}} = \frac{c_0}{\sqrt{\epsilon_r \cdot \mu_s}}$\\
 $X' = \frac{X}{l}$\\
 
-
-Einkopplung: $k_0 = \frac{R_w}{R_w + R_i} $\\
+$k_0 = \frac{R_w}{R_w + R_i} $\\
 $r_a = \frac{R_a - R_w}{R_a + R_w} $\\
 $k_a = 1 + r_a$\\
 Reflexion: $U_r(l,t) = r_a \cdot U_k(l,t)$\\
@@ -99,46 +84,44 @@ Ende: $U_k(x,t)= k_0 \cdot U_{q1}(t-\Delta t)$\\
 $\Delta t = \frac{l}{c}$\\
 Auskoppeln Gatter:\\
 \phantom{ss} $U_1(t) = k_a \cdot U_1(x,t)$\\
-Lichtwellenleitung: $\alpha = \frac{L_P}{l}, [\alpha] = 1 \frac{dB}{m}$\\
-Lichtleistung: $L_P = 10 \cdot lg\frac{P_e}{P_a} dB\\ L_P = l \cdot \alpha$\\
-$ [L_P] = 1dB$\\
-Tiefpass: Oben R, Mitte C
 
-
+LW-Leitung: $\alpha = \frac{L_P}{l}; [\alpha] = 1 \frac{dB}{m}$\\
+Lichtleistung: $L_P = 10 \cdot lg\frac{P_e}{P_a} dB$\\
+\phantom{sssssississsssss} $L_P = l \cdot \alpha$\\
+\phantom{sssssississsssss}$ [L_P] = 1dB$\\
 
 
 
 \end{minipage}%
 ~~~~~~
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{0.33\textwidth}
 \underline{\textbf{Operationsverstärker:}}\\
-\includegraphics[scale=0.40]{IOV.png}
 \includegraphics[scale=0.40]{NIOV.png}
-$U_D = 0 \Rightarrow I_N = 0, U_N = 0$
-\includegraphics[scale=0.40]{ISTOV.png}
-\includegraphics[scale=0.40]{NISTOV.png}
-$U_A \in \{U_B,0\}$
-% TODO 10.1
-!Invertierter ST wird trotz Negation nicht noch einmal invertiert
+\includegraphics[scale=0.40]{IOV.png}
+$U_D = 0 \Rightarrow I_N = 0, U_N = 0$\\
+
+\includegraphics[scale=0.40]{NISTOV.png}\\
+\includegraphics[scale=0.40]{ISTOV.png}\\
+$U_A \in \{U_B,0\}$\\
 $U_D = 0 = U_P - U_{E_{HL}}$\\
-\phantom{sssi}$U_{E_{HL}} = \frac{\Rightarrow U_{A_{max}} \cdot R_2}{R_1 + R_2}$\\
+\phantom{sssi}$\Rightarrow U_{E_{HL}} = \frac{U_{A_{max}} \cdot R_2}{R_1 + R_2}$\\
 $U_D = 0 = U_P - U_{E_{LH}}$\\
-\phantom{sssi}$U_{E_{LH}}= \frac{\Rightarrow U_{A_{min}} \cdot R_2}{R_1 + R_2}$\\
-Schalthysterese: $H = |U_{E_{HL}} - U_{E_{LH}}| $\\
-Diode: $\Rightarrow U_{E_{LH}} = 0$
+\phantom{sssi}$\Rightarrow U_{E_{LH}}= \frac{ U_{A_{min}} \cdot R_2}{R_1 + R_2}$\\
+Diode: $\Rightarrow U_{E_{LH}} = 0$\\
+Schalthysterese:\\
+\phantom{sssssi} $H = |U_{E_{HL}} - U_{E_{LH}}|$\\
 
 \includegraphics[scale=0.40]{Zehnerpotenzen.jpg}
 
 \end{minipage}%
 
 \newpage
-% TODO Dürfen wir 2 Seiten(1 Blatt) nutzen?
-\begin{minipage}{0.3\textwidth}
+
+\begin{minipage}{0.33\textwidth}
 
 \underline{\textbf{Diode:}}\\
 Gesperrt: $U_D < U_{F_0}$\\
 Leitend: $\Rightarrow U_D = U_{F_0}$\\
-Diodenspannung fällt in Richtung Spitze ab
 Reale Diode sperrt: $\Rightarrow I_D = -I_S$
 
 \underline{\textbf{Transistor:}}\\
@@ -149,14 +132,7 @@ n-Kanal:\\
 \phantom{ss} Leitet: $\Rightarrow U_{DS} \geq 0$\\
 \phantom{sssssisisssi}$\Rightarrow I_D \geq 0$\\
 
-\[I_D = \left\{
-  \begin{array}{lr}
-    0 & : U_{GS} < U_{th}~Sperrbereich\\
-    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & : U_{DS} \ge U_{GS} - U_{th} pinch-off\\
-       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & : U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
-  \end{array}
-\right.
-\]
+
 
 p-Kanal:\\
 \phantom{ss} Pfeil von Gate weg\\
@@ -164,30 +140,42 @@ p-Kanal:\\
 \phantom{ss} Leitet: $\Rightarrow U_{DS} \leq 0$\\
 \phantom{sssssisisssi}$\Rightarrow I_D \leq 0$\\
 
-Source-Drain bestimmen: Potenziale berechnen\\
-%I_D =
-NMOS: Schaltung aus n-Kanal Transistoren\\
-\phantom{ss} Logische Schaltung hat nur nicht-negierte Literale und eine Negation über kompletter Formel\\
-PMOS: Schaltung aus p-Kanal Transistoren hat nur negierte Literalel\\
-CMOS: Besteht aus NMOS und PMOS Teil, welche Komplementär sind\\
-Oder in Formel => Parallel in Schaltung
-Und in Formel => Reihe in Schaltung
-\phantom{ss} Wenn NMOS Parallel, dann PMOS Reihe\\
-\end{minipage}%
+Wo Source-Drain durch Pot.\\
+NMOS hat nur nicht-negierte Literale und 1 Negation über kompletter Formel\\
+PMOS hat nur negierte Literale\\
+CMOS: komp. NMOS und PMOS Teile\\
+OR in Formel $\Rightarrow$ Parallelschaltung\\
+AND in Formel $\Rightarrow$ Reihenschaltung\\
 
-\begin{minipage}{0.3\textwidth}
+\[I_D = \left\{
+  \begin{array}{lr}
+    0 & , U_{GS} < U_{th}~Sperrbereich\\
+    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th} pinch-off\\
+       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
+  \end{array}
+\right.
+\]
+\end{minipage}
+~~~~~~~
+\begin{minipage}{0.33\textwidth}
+
 \underline{\textbf{Multiplexer:}}\\
-OBDD: Nutze Shannon
-\phantom{ss} $\Rightarrow$ Mache aus geg. Formel neue Formeln, wo für 1. Variable 0 oder 1 angenommen wird. $\rightarrow$ Mache aus diesen Formeln neue Formeln, bei denen 2. Variable 0 oder 1 angenommen wird.\\
-\phantom{ss} $\Rightarrow$ Jede Ebene von Funktionen ist 1 Ebene im Baum ist eine Ebene von Multiplexern. In x.ter Ebene ist x. Variable Schaltvariable an Mutliplexer\\
-KV-Diagramme: Grey-Code, !Rechtecke! müssen 2-er Potenzen als Seitenlänge haben.
-Grey-Code:(Not A, Not B), (Not A, B), (A,B), (A, Not B)\\
+OBDD: Nutze Shannon\\
+1. Mache aus geg. Formel neue Formeln, wo für 1. Variable 0 oder 1 angenommen wird.\\
+2. Mache aus diesen Formeln neue Formeln, bei denen 2. Variable 0 oder 1 angenommen wird.\\
+3. Jede Ebene von Funktionen ist 1 Ebene im Baum ist eine Ebene von Multiplexern. In x.ter Ebene ist x. Variable Schaltvariable an Mutliplexer\\
+KV-Diagramme: Grey-Code, \textbf{Rechtecke} müssen 2-er Potenzen als Seitenlänge haben.
+Grey-Code:$(\overline{A} \overline{B}), (\overline{A}, B), (A,B), (A, \overline{B})$\\
+
 \underline{\textbf{Flip-Flop:}}\\
-Zeitstuerung: ((1)|(2)-takt-(zustands)|(flanken))|(Nicht takt) - gesteurtes FF
-Datenstuerung: Delay, Toggle (1 Eingang), R-S, J-K (2 Eingänge) FF
-Falls $>$ an Takt, dann steigende Taktflankengestuert\\
-Falls $o>$, dann fallende Taktflankengestuert\\
+Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
+Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)
+Falls $>$ an Takt, dann steigende Taktflankengesteuert\\
+Falls $\rlap{o}{>}$, dann fallende Taktflankengesteuert\\
 % Typen von Tabellen (Zustandsübergangstabelle,...)
+\end{minipage}
+~~~~~~~
+\begin{minipage}{0.33\textwidth}
 \underline{\textbf{Arten von Automaten:}}\\
 Moore: Eingang hängt nicht direkt am Ausgang\\
 Falls nicht Moore, dann Mealy\\
@@ -196,6 +184,7 @@ Asynchron: Er hat keinen Takt\\
 Autonom: Kein eigener Eingang\\
 flankengestuerte FF meist durch MS-FF realisiert
 % Speicher nicht Übung, aber dennoch in Klausur
+
 \underline{\textbf{Zustandsgraph:}}\\
 Ist im Prinzip totaler DFA\\
 Kann Startzustand haben oder nicht.\\
@@ -205,9 +194,6 @@ Ungetaktete Ausgänge an Pfeile schreiben\\
 An Pfeil muss Belegung der Eingänge\\
 One Hot Kodierung:
 Für jeden Zustand genau ein FF an. Falls (0,0,0,...) Startzustand, dann muss FF0 immer 1 sein, außer wenn Zustand 0 ist, dann ist alles 0
-% TODO Vielleicht 2 Seiten mit je nur 2 Spalten?
-
-
 \end{minipage}%
 
 %\end{landscape}
