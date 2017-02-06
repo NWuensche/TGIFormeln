@@ -16,13 +16,13 @@ Leitwert: $G = \frac{1}{R}$\\
 Maschensatz: $\sum U_i = 0$\\
 Knotensatz: $\sum I_i = 0$\\
 Reihe WS: $R_{ges} = \sum R_i$\\
-Parallel WS: $\frac{1}{R_ges} = \sum \frac{1}{R_i}$\\
+Parallel WS: $\frac{1}{R_{ges}} = \sum \frac{1}{R_i}$\\
 \phantom{ss} Spezialfall: $R_{ges} = \frac{R_1 \cdot R_2}{R1+R2} $\\
 Spannungs-Teiler: $\frac{U_1}{U_2} = \frac{R_1}{R_2}$\\
 Strom-Teiler: $\frac{I_1}{I_2} = \frac{R_2}{R_1}$\\
 Leistung: $P =U \cdot I = \frac{U^2}{R} = I^2 \cdot R $ \\
 \phantom{ssssssssss} $[P] = 1V \cdot A =1 W$\\
-Wenn kein Strom fließt, ist U in Masche gleich!\\
+Kein Strom $\Rightarrow$ U in Masche gleich!\\
 
 \underline{\textbf{Kondensator:}}\\
 Kapazität: $C = \frac{Q}{U} = \frac{\varepsilon \cdot A }{d},$\\
@@ -61,8 +61,9 @@ Feldstärke: $E=\frac{S}{\kappa}$\\
 Spannungsabfall: $U=E \cdot l$\\
 Pot.: $\varphi (x)= \int_x^0 E(s)ds + \varphi(0)$\\
 Stromstärke: $I = \oint H ds = H \cdot 2\pi r$\\
-Magnetische Feldstärke: $H = \frac{I}{2\pi d}, [H] = 1\frac{A}{m}$\\
-Kraft pro Leitungslänge: $F=Q \cdot v \cdot B, [F] = 1N$\\
+Mag.Feldstr.: $H = \frac{I}{2\pi d}, [H] = 1\frac{A}{m}$\\
+Kraft pro Leitungslänge:\\
+\phantom{ss} $F=Q \cdot v \cdot B, [F] = 1N$\\
 Ladung pro mm: $Q = \rho \cdot V$\\
 $e^-$-Gesch.: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
 Flussdichte: $B=\mu \cdot H, [B] = 1 \frac{Vs}{m^2}$\\
@@ -122,23 +123,31 @@ Schalthysterese:\\
 \underline{\textbf{Diode:}}\\
 Gesperrt: $U_D < U_{F_0}$\\
 Leitend: $\Rightarrow U_D = U_{F_0}$\\
-Reale Diode sperrt: $\Rightarrow I_D = -I_S$
+Reale Diode sperrt: $\Rightarrow I_D = -I_S$\\
 
 \underline{\textbf{Transistor:}}\\
 $I_G \stackrel{!}{=} 0A$\\
+
 n-Kanal:\\
-\phantom{ss} Pfeil auf Gate\\
-\phantom{ss} Sperrt: $U_{GS} < U_{th}$
-\phantom{ss} Leitet: $\Rightarrow U_{DS} \geq 0$\\
-\phantom{sssssisisssi}$\Rightarrow I_D \geq 0$\\
+- Pfeil auf Gate\\
+- Sperrt: $U_{GS} < U_{th}$\\
+- Leitet: $\Rightarrow U_{DS} \geq 0$\\
+\phantom{sssssiisssi}$\Rightarrow I_D \geq 0$\\
 
-
+\[I_{D_N} = \left\{
+  \begin{array}{lr}
+    0 & , U_{GS} < U_{th}~Sperrbereich\\
+    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th}~pinch-off\\
+       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
+  \end{array}
+\right.
+\]
 
 p-Kanal:\\
-\phantom{ss} Pfeil von Gate weg\\
-\phantom{ss} Sperrt: $U_{GS} > U_{th}$
-\phantom{ss} Leitet: $\Rightarrow U_{DS} \leq 0$\\
-\phantom{sssssisisssi}$\Rightarrow I_D \leq 0$\\
+- Pfeil von Gate weg\\
+- Sperrt: $U_{GS} > U_{th}$\\
+- Leitet: $\Rightarrow U_{DS} \leq 0$\\
+\phantom{ssssisisssi}$\Rightarrow I_D \leq 0$\\
 
 Wo Source-Drain durch Pot.\\
 NMOS hat nur nicht-negierte Literale und 1 Negation über kompletter Formel\\
@@ -147,17 +156,16 @@ CMOS: komp. NMOS und PMOS Teile\\
 OR in Formel $\Rightarrow$ Parallelschaltung\\
 AND in Formel $\Rightarrow$ Reihenschaltung\\
 
-\[I_D = \left\{
-  \begin{array}{lr}
-    0 & , U_{GS} < U_{th}~Sperrbereich\\
-    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th} pinch-off\\
-       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
-  \end{array}
-\right.
-\]
+
+
+\underline{\textbf{Arten von Tabellen:}}\\
+- ZF-Tabelle hat Eingänge, Zustand $|$ und Folgezustand (+)\\
+- ZÜ-Tabelle hat Zustand-> Folgezustand $|$ Eingänge\\
+- ZF- und Ausgabetabelle hat Binärkodierung der Zustände(K), Eingang, Zustände, FF-Eingänge $|$, Folgezustände, Ausgänge(\textbf{Gegenwart}), Folgekodierung
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
+\vspace{-8.5cm}
 
 \underline{\textbf{Multiplexer:}}\\
 OBDD: Nutze Shannon\\
@@ -167,34 +175,37 @@ OBDD: Nutze Shannon\\
 KV-Diagramme: Grey-Code, \textbf{Rechtecke} müssen 2-er Potenzen als Seitenlänge haben.
 Grey-Code:$(\overline{A} \overline{B}), (\overline{A}, B), (A,B), (A, \overline{B})$\\
 
+\vspace{3cm}
 \underline{\textbf{Flip-Flop:}}\\
 Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
-Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)
 Falls $>$ an Takt, dann steigende Taktflankengesteuert\\
 Falls $\rlap{o}{>}$, dann fallende Taktflankengesteuert\\
-% Typen von Tabellen (Zustandsübergangstabelle,...)
+Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)
+
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
+\vspace{-4cm}
 \underline{\textbf{Arten von Automaten:}}\\
-Moore: Eingang hängt nicht direkt am Ausgang\\
-Falls nicht Moore, dann Mealy\\
-Synchron: Er hat Takt\\
-Asynchron: Er hat keinen Takt\\
-Autonom: Kein eigener Eingang\\
-flankengestuerte FF meist durch MS-FF realisiert
-% Speicher nicht Übung, aber dennoch in Klausur
+- Moore: E hängt nicht am A\\
+- Falls nicht Moore, dann Mealy\\
+- Synchron: Er hat Takt\\
+- Asynchron: Er hat keinen Takt\\
+- Autonom: Kein eigener Eingang\\
+- flankengestuerte FF meist durch MS-FF realisiert
 
+\vspace{7cm}
 \underline{\textbf{Zustandsgraph:}}\\
-Ist im Prinzip totaler DFA\\
-Kann Startzustand haben oder nicht.\\
-K's(Binärcodierte Eingänge) sind Zustände\\
-Kodiere getaktete Ausgänge als Binärzahl, schreibe Ausgang an jeden Zustand\\
-Ungetaktete Ausgänge an Pfeile schreiben\\
-An Pfeil muss Belegung der Eingänge\\
-One Hot Kodierung:
+- Ist im Prinzip totaler DFA\\
+- Kann Startzustand haben oder nicht.\\
+- K's(Binärcodierte Eingänge) sind Zustände\\
+- Kodiere getaktete Ausgänge als Binärzahl, schreibe Ausgang an jeden Zustand\\
+- Ungetaktete Ausgänge an Pfeile schreiben\\
+- An Pfeil muss Belegung der Eingänge\\
+
+\underline{\textbf{One Hot Kodierung:}}\\
 Für jeden Zustand genau ein FF an. Falls (0,0,0,...) Startzustand, dann muss FF0 immer 1 sein, außer wenn Zustand 0 ist, dann ist alles 0
 \end{minipage}%
+% TODO Speicher nicht Übung, aber dennoch in Klausur
 
-%\end{landscape}
 \end{document}
