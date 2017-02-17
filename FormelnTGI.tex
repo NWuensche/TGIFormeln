@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+ \documentclass[11pt]{article}
 
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -13,13 +13,13 @@
 \underline{\textbf{Grundformeln:}}\\
 WS: $R = \frac{U}{I} = \frac{\rho \cdot l}{A}$; $[R] = 1\frac{V}{A} =1 \Omega$\\
 Leitwert: $G = \frac{1}{R}$\\
-Maschensatz: $\sum U_i = 0$\\
-Knotensatz: $\sum I_i = 0$\\
+\textbf{Maschensatz: $\mathbf{\sum U_i = 0}$\\}
+\textbf{Knotensatz: $\mathbf{\sum I_i = 0}$\\}
 Reihe WS: $R_{ges} = \sum R_i$\\
 Parallel WS: $\frac{1}{R_{ges}} = \sum \frac{1}{R_i}$\\
 \phantom{ss} Spezialfall: $R_{ges} = \frac{R_1 \cdot R_2}{R1+R2} $\\
-Spannungs-Teiler: $\frac{U_1}{U_2} = \frac{R_1}{R_2}$\\
-Strom-Teiler: $\frac{I_1}{I_2} = \frac{R_2}{R_1}$\\
+\textbf{U-Teiler: $\mathbf{\frac{U_1}{U_2} = \frac{R_1}{R_2}\Leftrightarrow I_1 = I_2}$\\}
+\textbf{I-Teiler: $\mathbf{\frac{I_1}{I_2} = \frac{R_2}{R_1}\Leftrightarrow U_1 = U_2}$\\}
 Leistung: $P =U \cdot I = \frac{U^2}{R} = I^2 \cdot R $ \\
 \phantom{ssssssssss} $[P] = 1V \cdot A =1 W$\\
 Kein Strom $\Rightarrow$ U in Masche gleich!\\
@@ -37,12 +37,12 @@ Kond. parallel: $C_{ges} = C_1 + C_2$\\
 Kond. in Reihe: $C_{ges} = C_1 || C_2$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
 
-$U_a(t) = k_1 + k_2 \cdot e^{-\frac{t-t_0}{\tau}}$\\
+$\mathbf{U_a(t) = k_1 + k_2 \cdot e^{-\frac{t-t_0}{\tau}}}$\\
 Berechne $k_1$ durch $t \rightarrow \infty$, oft $U_B$\\
 $k_2$ durch $t = 0$, oft $-U_B$\\
 $[k] = 1V$\\
 
-$\tau = R \cdot C; [\tau] = 1s$\\
+Zeitkonstante: $\tau = R \cdot C; [\tau] = 1s$\\
 \phantom{ss}falls WS in Reihe $\Rightarrow$ parallel\\
 $t =\frac{T}{2} = \frac{1}{2f}$\\
 Zeit Auf-/Entlanden: $t = 3\tau$\\
@@ -133,11 +133,14 @@ Schalthysterese:\\
 \newpage
 
 \begin{minipage}{0.33\textwidth}
+\vspace{-5cm}
+\includegraphics[scale=0.40]{Mult.png}\\
+\includegraphics[scale=0.40]{FF.png}\\
 
 \underline{\textbf{Diode:}}\\
 Gesperrt: $U_D < U_{F_0}$\\
 Leitend: $\Rightarrow U_D = U_{F_0}$\\
-Reale Diode sperrt: $\Rightarrow I_D = -I_S$\\
+Reale Diode sperrt: $\Rightarrow I_D(raus) = -I_S$\\
 
 \underline{\textbf{Transistor:}}\\
 $I_G \stackrel{!}{=} 0A$\\
@@ -146,13 +149,13 @@ n-Kanal:\\
 - Pfeil auf Gate\\
 - Sperrt: $U_{GS} < U_{th}$\\
 - Leitet: $\Rightarrow U_{DS} \geq 0$\\
-\phantom{sssssiisssi}$\Rightarrow I_D \geq 0$\\
-
+\phantom{sssssiisi} $ (\Rightarrow U_D > 0, U_S = 0)$\\
+\phantom{sssssiisssi}$\Rightarrow I_D$(in D rein) $\geq 0$\\
 \[I_{D_N} = \left\{
   \begin{array}{lr}
     0 & , U_{GS} < U_{th}~Sperrbereich\\
-    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th}~pinch-off\\
-       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}~aktiver~Bereich\\
+    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th}$~pinch-off (evnt. noch 2. Gl aus MS/KS)$\\
+       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}$~akt.~Bereich (evnt. noch 2. Gl aus MS/KS)$\\
   \end{array}
 \right.
 \]
@@ -162,44 +165,47 @@ p-Kanal:\\
 - Sperrt: $U_{GS} > U_{th}$\\
 - Leitet: $\Rightarrow U_{DS} \leq 0$\\
 \phantom{ssssisisssi}$\Rightarrow I_D \leq 0$\\
-
 Wo Source-Drain durch Pot.\\
 NMOS hat nur nicht-negierte Literale und 1 Negation über kompletter Formel\\
 PMOS hat nur negierte Literale\\
 CMOS: komp. NMOS und PMOS Teile\\
 OR in Formel $\Rightarrow$ Parallelschaltung\\
 AND in Formel $\Rightarrow$ Reihenschaltung\\
-
-
-
-\underline{\textbf{Arten von Tabellen:}}\\
-- ZF-Tabelle hat Eingänge, Zustand $|$ und Folgezustand (+)\\
-- ZÜ-Tabelle hat Zustand-> Folgezustand $|$ Eingänge\\
-- ZF- und Ausgabetabelle hat Binärkodierung der Zustände(K), Eingang, Zustände, FF-Eingänge $|$, Folgezustände, Ausgänge(\textbf{Gegenwart}), Folgekodierung
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
-\vspace{-8.5cm}
+
 
 \underline{\textbf{Multiplexer:}}\\
 OBDD: Nutze Shannon\\
 1. Mache aus geg. Formel neue Formeln, wo für 1. Variable 0 oder 1 angenommen wird.\\
 2. Mache aus diesen Formeln neue Formeln, bei denen 2. Variable 0 oder 1 angenommen wird.\\
 3. Jede Ebene von Funktionen ist 1 Ebene im Baum ist eine Ebene von Multiplexern. In x.ter Ebene ist x. Variable Schaltvariable an Mutliplexer\\
-KV-Diagramme: Grey-Code, \textbf{Rechtecke} müssen 2-er Potenzen als Seitenlänge haben.
+
+KDNF: Mint.(=1) $\Rightarrow e1e2e3 + ...\overline{0}$\\
+KKNF:Maxt.(=0) $, (a+b+c) \cdot ...\overline{1}$\\
+KV-Diagramme:\\ Grey-Code, \textbf{Rechtecke} müssen 2-er Potenzen als Seitenlänge haben.\\
+min. DNF: 1en Verbinden\\
+min. KNF: 0en Verbinden\\
 Grey-Code:$(\overline{A} \overline{B}), (\overline{A}, B), (A,B), (A, \overline{B})$\\
 
-\vspace{3cm}
+\vspace{0.8cm}
 \underline{\textbf{Flip-Flop:}}\\
 Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
 Falls $>$ an Takt, dann steigende Taktflankengesteuert\\
 Falls $\rlap{o}{>}$, dann fallende Taktflankengesteuert\\
-Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)
+Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)\\
+MS-FF: $c_M=0,c_S=1 \Rightarrow$ +Flake
 
+\underline{\textbf{Arten von Tabellen:}}\\
+- WW-Tabelle hat Eingänge und Ausgänge berechnet\\
+- ZF-Tabelle hat Eingänge, Zustand(Q) $|$ und Folgezustand (Q+)\\
+- ZÜ-Tabelle hat Zustand $\rightarrow$ Folgezustand(Q+) $|$ Eingänge\\
+-ZF- und Atab. hat Binärkod. der Zustandskodierung(K), Eingang(E), Zustände(Q), \\FF-E(J,K) $|$, Folgezustände(Q+), Ausgänge(A \textbf{Gegenwart}), \\ Folgekodierung(k+)\\
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
-\vspace{-4cm}
+
 \underline{\textbf{Arten von Automaten:}}\\
 - Moore: E hängt nicht am A\\
 - Falls nicht Moore, dann Mealy\\
@@ -208,7 +214,10 @@ Datensteuerung:\\ Delay, Toggle (1 Eingang), \\R-S, J-K (2 Eingänge)
 - Autonom: Kein eigener Eingang\\
 - flankengestuerte FF meist durch MS-FF realisiert
 
-\vspace{7cm}
+logische Fkt.:$F = \overline{AB} \Rightarrow $ NAND
+log./Schalt-Verknüpfung:$y = \overline{AB} $
+
+\vspace{8cm}
 \underline{\textbf{Zustandsgraph:}}\\
 - Ist im Prinzip totaler DFA\\
 - Kann Startzustand haben oder nicht.\\
