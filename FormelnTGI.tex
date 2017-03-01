@@ -242,34 +242,48 @@ auszurechnen. \\
 
 
 \underline{\textbf{Logik:}}\\
-KDNF: Mint.(=1) $\Rightarrow e1e2e3 + ...\overline{0}$\\
-KKNF:Maxt.(=0) $, (a+b+c) \cdot ...\overline{1}$\\
-KV-Diagramme:\\ 
-\textbf{3,4 Block Drehen}\\
+KDNF: Minterme(y=1) $\implies a\overline{b}c + ...$\\
+\phantom{sssi} $a=1 \to a, \hspace{2mm} b=0 \to \overline{b}$ \\
+KKNF: Maxterme(y=0) $\implies (\overline{a}+b+\overline{c}) \cdot ...$\\
+\phantom{sssi} $a=1 \to \overline{a}, \hspace{2mm} b=0 \to b$ \\
+
+\textbf{KV-Diagramme:}\\
 Gray C., Rechtecke, übers. OK.\\
 Gray C:$(\overline{A} \overline{B}), (\overline{A}B), (AB), (A\overline{B})$\\
-min. DNF: 1en Verbinden\\
-min. KNF: 0en, alle Var neg.\\
-logische Fkt.:$F = \overline{AB} \Rightarrow $ NAND
-log./Schalt-Verknüpfung:$y = \overline{AB} $\\
-Nur NAND $\Rightarrow$ 2 Nega., keine +, 1N über ganzer Formel\\
-$\overline{y}$ = NMOS\\
-$\overline{NMOS} \rightarrow$ y = PMOS\\
+Min. DNF: 1en verbinden\\
+Min. KNF: 0en, alle Literale negieren\\
+Logische Fkt.: $F = \overline{AB} \Rightarrow $ NAND \\
+Log./Schalt-Verknüpfung: $y = \overline{AB} $\\
+Nur NAND: $y = \overline{\overline{y}}$ \\
+\phantom{sssi} Keine +, 1 Neg. über ganzer Formel\\
 
 
 \underline{\textbf{Multiplexer:}}\\
-OBDD: Nutze Shannon(0en 1en\\
-Ebenef(x)=Eb.Baum=Eb. Mult.\\
+OBDD: Nutze Shannonzerlegung\\
+- Variablenordnung \\
+- Pro Var. nach 0 und 1 aufspalten \\
+- Baum $\implies$ Multiplexernetz
 
 \underline{\textbf{Flip-Flop:}}\\
 Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
 $>$ Takt$\Rightarrow$ steig. TF\\
 $\rlap{o}{>}$ Takt$\Rightarrow$ fall. TF\\
-Datensteuerung:\\ Delay, Toggle(1E), RS, JK (2E)\\
-MS-FF: $c_M=0,c_S=1 \Rightarrow$ +Fl.\\
-J=S; K=R; 1,1 = Inv.\\
-NAND: J-K:4, R-S:2,\\
-Trans.: NAND: 4, D-FF: 14\\
+Datensteuerung:\\
+- 1 Eingang: \textbf{D}elay, \textbf{T}oggle \\
+- 2 Eingänge: \textbf{R}eset-\textbf{S}et, \textbf{J}ump-\textbf{K}ill \\
+MS-FF: $C_M= \overline{C_S} \Rightarrow $ taktflankengest.\\
+NANDs: JK:4, RS:2,\\
+Transistoren: NAND: 4, D-FF: 14 \\
+\[
+\begin{array}{cc|cc}
+    \multicolumn{2}{c|}{Q \to Q^+} & J & K \\
+    \hline
+    0 & 0 & 0 & * \\
+    0 & 1 & 1 & * \\
+    1 & 0 & * & 1 \\
+    1 & 1 & * & 0
+\end{array}
+\] \\
 
 \end{minipage}
 ~~~~~~~
