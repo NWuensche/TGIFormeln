@@ -29,19 +29,16 @@ U zu Masse $\Rightarrow$ alles danach drin
 \underline{\textbf{Kondensator:}}\\
 Kapazität: $C = \frac{Q}{U} = \frac{\varepsilon \cdot A }{d},$\\
 \phantom{ssssssssssii} $[C]=1F$\\
-Ladung: $q = \int_{t_0}^t i(\tau) d\tau + q_0$\\
+Ladung: $Q = \int_{t_0}^t i(\tau) d\tau + q_0$\\
 \phantom{sssssssis} $\stackrel{homogen}{=} I \cdot t$\\
 \phantom{ssssssssssii} $[q]=1C$\\
 Spannung: $U = \frac{Q}{C}$\\
-\phantom{ssi} $= \frac{1}{C} \cdot (\int_{t_0}^t i(\tau) d\tau + q_0)$\\
 Kond. parallel: $C_{ges} = C_1 + C_2$\\
 Kond. in Reihe: $C_{ges} = C_1 || C_2$\\
 Kond. in Reihe: $Q_1 = Q_2 = Q_{12}$\\
 
-$\mathbf{U_a(t) = k_0 + k_1 \cdot e^{-\frac{t-t_0}{\tau}}}$\\
+$u_c(t) = u_c(\infty) + (u_{pre} - u_c(\infty)) \cdot e^{-\frac{t-t_0}{\tau}}$\\
 Wenn WS dazu, dann V-Teiler\\
-Berechne $k_0$ durch $t \rightarrow \infty$, oft $U_B$\\
-$k_1$ durch $t = 0$, oft $-U_B$\\
 $[k] = 1V$\\
 Str.q: $U = \frac{Q}{C} = \frac{I_q \cdot (t-t_0)}{C} + U_c(t_0)$\\
 \phantom{sss} ,Kennlinie linear\\
@@ -159,10 +156,10 @@ n-Kanal:\\
 \phantom{sssssiisi} $ (\Rightarrow U_D > 0, U_S = 0)$\\
 \phantom{sssssiisssi}$\Rightarrow I_D$(in D rein) $\geq 0$\\
 \[I_{D_N} = \left\{
-  \begin{array}{lr}
-    0 & , U_{GS} < U_{th}~Sperrbereich\\
-    \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & , U_{DS} \ge U_{GS} - U_{th}$~pinch-off (evnt. noch 2. Gl aus MS/KS)$\\
-       \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2  \ & , U_{DS} \leq U_{GS} - U_{th}$~akt.~Bereich (evnt. noch 2. Gl aus MS/KS)$\\
+  \begin{array}{ll}
+      0 & U_{GS} < U_{th}~$sperrt$\\
+        \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & U_{DS} \ge U_{GS} - U_{th}$~pinch-off (evnt. noch 2. Gl aus MS/KS)$\\
+        \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2)  \ & U_{DS} \leq U_{GS} - U_{th}$~aktiv (evnt. noch 2. Gl aus MS/KS)$\\
   \end{array}
 \right.
 \]
@@ -188,8 +185,8 @@ KDNF: Mint.(=1) $\Rightarrow e1e2e3 + ...\overline{0}$\\
 KKNF:Maxt.(=0) $, (a+b+c) \cdot ...\overline{1}$\\
 KV-Diagramme:\\ 
 \textbf{3,4 Block Drehen}\\
-GreyC., Rechtecke, übers. OK.\\
-GreyC:$(\overline{A} \overline{B}), (\overline{A}B), (AB), (A\overline{B})$\\
+Gray C., Rechtecke, übers. OK.\\
+Gray C:$(\overline{A} \overline{B}), (\overline{A}B), (AB), (A\overline{B})$\\
 min. DNF: 1en Verbinden\\
 min. KNF: 0en, alle Var neg.\\
 logische Fkt.:$F = \overline{AB} \Rightarrow $ NAND
@@ -221,12 +218,11 @@ Trans.: NAND: 4, D-FF: 14\\
 \begin{minipage}{0.33\textwidth}
 
 \underline{\textbf{Arten von Automaten:}}\\
-- Moore: E hängt nicht am A\\
-- Falls nicht Moore, dann Mealy\\
-- Synchron: Er hat Takt\\
-- Asynchron: Er hat keinen Takt\\
-- Autonom: Kein eigener Eingang\\
-- flankenge. FF oft durch MS-FF\\
+- Mealy: \textbf{A}usgang hängt von \textbf{E}ingang und Zustand \textbf{Q} ab \\
+- Moore: A hängt nur von Q ab \\
+- Autonom: Kein E \\
+- Asynchron: Kein Takt \\
+- Flankengest. Oft Master-Slave \\
 
 \underline{\textbf{Synthese}}\\
 - Zustandsgraph $\Rightarrow$ ZF-AFT: Kenne Q, Q+ $\Rightarrow$ Wie FF's schalten
