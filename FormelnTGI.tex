@@ -169,40 +169,67 @@ Verstärkungsfaktor $V_D \to \infty$ \\
 \includegraphics[scale=0.40]{FF.png}\\
 
 \underline{\textbf{Diode:}}\\
-Gesperrt: $U_D < U_{F_0}$\\
-Leitend: $\Rightarrow U_D = U_{F_0}$\\
-D sperrt: $\Rightarrow I_D(raus) = (-I_S|0)$\\
-WS-Frei
+Sperrt bei: $U_D < U_{F_0}$\\
+\phantom{sssi}$\implies I_D = -I_S$ oder $0$\\
+Leitet bei: $U_D = U_{F_0}$\\
+WS-frei \\
 
 \underline{\textbf{Transistor:}}\\
-$I_G \stackrel{!}{=} 0A$\\
+$I_G \stackrel{!}{=} 0$\\
 
-n-Kanal:\\
+\textbf{n-Kanal:}\\
 - Pfeil auf Gate\\
-- Sperrt: $U_{GS} < U_{th}$\\
-- Leitet: $\Rightarrow U_{DS} \geq 0$\\
-\phantom{sssssiisi} $ (\Rightarrow U_D > 0, U_S = 0)$\\
-\phantom{sssssiisssi}$\Rightarrow I_D$(in D rein) $\geq 0$\\
-\[I_{D_N} = \left\{
-  \begin{array}{ll}
-      0 & U_{GS} < U_{th}~$sperrt$\\
-        \frac{1}{2} \cdot \beta \cdot(U_{GS} - U_{th})^2  \ & U_{DS} \ge U_{GS} - U_{th}$~pinch-off (evnt. noch 2. Gl aus MS/KS)$\\
-        \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} \cdot U_{DS}^2)  \ & U_{DS} \leq U_{GS} - U_{th}$~aktiv (evnt. noch 2. Gl aus MS/KS)$\\
+- Sperrt bei: $U_{GS} < U_{th}$\\
+\phantom{sssi} $\implies I_{DS} = 0$\\
+- Leitet bei: $U_{GS} \geq U_{th}$ \\
+\phantom{sssi} $\implies U_{DS} \geq 0, \hspace{2mm} I_{DS} \geq 0$\\
+%
+\textbf{p-Kanal:}\\
+- Pfeil von Gate weg\\
+- Sperrt bei: $U_{GS} > U_{th}$\\
+\phantom{sssi} $\implies I_{DS} = 0$\\
+- Leitet bei: $U_{GS} \leq U_{th}$ \\
+\phantom{sssi} $\implies U_{DS} \leq 0, \hspace{2mm} I_{DS} \leq 0$
+%
+\[
+  I_{DS,N} = \left\{
+  \begin{array}{lll}
+        0 & U_{GS} < U_{th} &$sperrt$ \\
+        \frac{1}{2} \beta \cdot(U_{GS} - U_{th})^2 & U_{DS} > U_{GS} - U_{th} & $pinch-off$ \\
+        \beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} U_{DS}^2) & U_{DS} \leq U_{GS} - U_{th} & $aktiv$\\
   \end{array}
 \right.
 \]
+\[
+  I_{DS,P} = \left\{
+  \begin{array}{lll}
+        0 & U_{GS} > U_{th} &$sperrt$ \\
+        -\frac{1}{2} \beta \cdot(U_{GS} - U_{th})^2 & U_{DS} < U_{GS} - U_{th} & $pinch-off$ \\
+        -\beta \cdot((U_{GS} - U_{th}) \cdot U_{DS} - \frac{1}{2} U_{DS}^2) & U_{DS} \geq U_{GS} - U_{th} & $aktiv$\\
+  \end{array}
+\right.
+\]
+Mit $I_D = \frac{U}{R}$ gleichsetzen um $U_{DS}$\\
+auszurechnen. \\
 
-p-Kanal:\\
-- Pfeil von Gate weg\\
-- Sperrt: $U_{GS} > U_{th}$\\
-- Leitet: $\Rightarrow U_{DS} \leq 0$\\
-\phantom{ssssisisssi}$\Rightarrow I_D \leq 0$\\
-Wo Source-Drain durch Pot.\\
-NMOS hat nur nicht-negierte Literale und 1 Negation über kompletter Formel\\
-PMOS hat nur negierte Literale\\
-CMOS: komp. NMOS und PMOS Teile\\
-$+$F. $\Rightarrow$ Parallelschaltung\\
-$\mathbf{\cdot} \Rightarrow$ Reihenschaltung\\
+\underline{\textbf{CMOS:}}\\
+\begin{tabular}{l|ll}
+    Gate & n-Kanal & p-Kanal \\
+    \hline
+    L & sperrt & leitet \\
+    H & leitet & sperrt
+\end{tabular}
+\\
+\textbf{NMOS:} $\overline{y} = a(b+c)$ \\
+- Nur nicht-negierte Literale, y negiert \\
+- WS oben bei $U_b$ im Schaltkreis\\
+\textbf{PMOS:} $y = \overline{a}(\overline{b} + \overline{c})$ \\
+- Nur negierte Literale \\
+- WD unten bei Masse im Schaltkreis\\
+\textbf{CMOS:} PMOS und komplementärer NMOS-Teil\\
+- Parallelschaltung $\implies +$ \\
+- Reihenschaltung \hspace{0.1mm} $\implies \mathbf{\cdot}$ \\
+
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
@@ -228,7 +255,6 @@ $\overline{NMOS} \rightarrow$ y = PMOS\\
 OBDD: Nutze Shannon(0en 1en\\
 Ebenef(x)=Eb.Baum=Eb. Mult.\\
 
-\vspace{3cm}
 \underline{\textbf{Flip-Flop:}}\\
 Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
 $>$ Takt$\Rightarrow$ steig. TF\\
@@ -238,8 +264,6 @@ MS-FF: $c_M=0,c_S=1 \Rightarrow$ +Fl.\\
 J=S; K=R; 1,1 = Inv.\\
 NAND: J-K:4, R-S:2,\\
 Trans.: NAND: 4, D-FF: 14\\
-
-
 
 \end{minipage}
 ~~~~~~~
