@@ -105,49 +105,55 @@ Lichtleistung: $L_P = 10dB \cdot \lg (\frac{P_e}{P_a})$\\
 ~~~~~~
 \begin{minipage}{0.33\textwidth}
 \underline{\textbf{Operationsverstärker:}}\\
-$V_D = \infty I_P=I_N=R_D=U_D=V_G=R_a=0$\\
-\includegraphics[scale=0.40]{NIOV.png}
-\includegraphics[scale=0.40]{IOV.png}
-$U_D = 0 \Rightarrow I_N = 0, U_N = 0$\\
+Eingangs-WD $R_+ = R_- = \infty$ \\
+Ausgangs-WD $R_a = 0$ \\
+$\implies I_+ = I_- = 0$ \\
 
-\includegraphics[scale=0.40]{NISTOV.png}\\
+\includegraphics[scale=0.40]{NIOV.png}
+\includegraphics[scale=0.40]{IOV.png} \\
+$U_D = 0$, Gegenkoppung\\
+
+\includegraphics[scale=0.40]{NISTOV.png}
 \includegraphics[scale=0.40]{ISTOV.png}\\
-Umschalt.:$U_D = 0 \Rightarrow U_G = U_{SP}$\\
-$U_A \in \{U_B,0\}$\\
-$U_D = 0 = U_P - U_{E_{HL}}$\\
-\phantom{sssi}$\Rightarrow U_{E_{HL}} = \frac{U_{A_{max}} \cdot R_1}{R_1 + R_2}$\\
-$U_D = 0 = U_P - U_{E_{LH}}$\\
-\phantom{sssi}$\Rightarrow U_{E_{LH}}= \frac{ U_{A_{min}} \cdot R_1}{R_1 + R_2}$\\
-Diode: $\Rightarrow U_{E_{LH}} = 0$\\
+$U_D \neq 0$, Mitkopplung \\
+Umschaltung bei:\\
+\phantom{sssi}$U_D = 0 \Rightarrow U_G = U_{SP}$\\
+$U_A \in \{ U_{A,min}, U_{A,max} \}$\\
+$U_D = 0 = U_E - U_{E,HL}$\\
+\phantom{sssi}$\Rightarrow U_{E,HL} = \frac{R_1}{R_1 + R_2} \cdot U_{A,max}$\\
+$U_D = 0 = U_E - U_{E,LH}$\\
+\phantom{sssi}$\Rightarrow U_{E,LH} = \frac{R_1}{R_1 + R_2} \cdot U_{A,min}$\\
+Diode: $\Rightarrow U_{E,LH} = 0$\\
 Schalthysterese:\\
-\phantom{sssssi} $H = |U_{E_{HL}} - U_{E_{LH}}|$\\
-z.B. V Low-High: $\Rightarrow U_G = U_{SP}, U_A=L$
+\phantom{sssi} $H = |U_{E,HL} - U_{E,LH}|$\\
+Verstärkungsfaktor $V_D \to \infty$ \\
+\phantom{sssi}$U_A = V_D \cdot U_D$ \\
 
 \begin{tabular}{| l l l |}
 	\hline
-	Name & Zeichen & Potenz\\[0.5ex]
+	Name & Präfix & Potenz\\[0.5ex]
 	\hline
 	\hline
-	Peta & P & $10^{15}$\\
+	Peta & $P$ & $10^{15}$\\
 	\hline
-	Tera & T & $10^{12}$\\
+	Tera & $T$ & $10^{12}$\\
 	\hline
-	Giga & G & $10^9$\\
+	Giga & $G$ & $10^9$\\
 	\hline
-	Mega & M & $10^6$\\
+	Mega & $M$ & $10^6$\\
 	\hline
-	Kilo & k & $10^3$\\[0.5ex]
+	Kilo & $k$ & $10^3$\\[0.5ex]
 	\hline
 	\hline
-	Milli & m & $10^{-3}$\\
+	Milli & $m$ & $10^{-3}$\\
 	\hline
 	Mikro & $\mu$ & $10^{-6}$\\
 	\hline
-	Nano & n & $10^{-9}$\\
+	Nano & $n$ & $10^{-9}$\\
 	\hline
-	Piko & p & $10^{-12}$\\
+	Piko & $p$ & $10^{-12}$\\
 	\hline
-	Femto & f & $10^{-15}$\\
+	Femto & $f$ & $10^{-15}$\\
 	\hline
 \end{tabular}
 
