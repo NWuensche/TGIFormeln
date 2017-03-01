@@ -65,8 +65,8 @@ HP: Kennl.$U_A$ seltsam,$U_E$ normal
 Stromdichte: $S=\frac{I}{A}$\\
 Feldstärke: $E=\frac{S}{\kappa}$\\
 Spannungsabfall: $U=E \cdot l$\\
-Pot.: $\varphi (x)= \int_x^0 E(s)ds + \varphi(0)$\\
-Stromstärke: $I = \oint H ds = H \cdot 2\pi r$\\
+Pot.: $\varphi (x)= \int_x^0 E(s)$ds$ + \varphi(0)$\\
+Stromstärke: $I = \oint H $ds$ = H \cdot 2\pi d$\\
 Mag.Feldstr.: $H = \frac{I}{2\pi d}, [H] = 1\frac{A}{m}$\\
 Kraft pro Leitungslänge:\\
 \phantom{ss} $F=Q \cdot v \cdot B, [F] = 1N$\\
@@ -74,34 +74,30 @@ Ladung pro mm: $Q = \rho \cdot V$\\
 $e^-$, Drift-Gesch.: $v = \frac{S}{\rho}, [v] = 1\frac{m}{s}$\\
 Flussdichte: $B=\mu \cdot H, [B] = 1 \frac{Vs}{m^2}$\\
  
- \underline{\textbf{(Koaxial-)Leitungen}}:\\
-$R_W = \sqrt{\frac{L'}{C'}}$\\
-    \phantom{sssi} $=\frac{\sqrt{\mu_R} \cdot ln(\frac{d_a}{d_i})}{2c_0 \cdot \pi \cdot \epsilon_0 \cdot \sqrt{\epsilon_R}}$\\
-$C = \frac{1}{\sqrt{L' \cdot C'}} = \frac{c_0}{\sqrt{\epsilon_r \cdot \mu_s}}$\\
-$C' = \frac{2\pi \epsilon_0 \epsilon_r \cdot s}{ln(\frac{d_a}{d_i})}$ = $\frac{C}{l}$\\
-$L' = \frac{\sqrt{\epsilon_r \mu_r}}{c_0 \cdot \sqrt{C'}}$\\
+\underline{\textbf{Leitungen}}:\\
+$R_W = \sqrt{\frac{L'}{C'}} = \frac{\sqrt{\epsilon_r \mu_r} \cdot s}{c_0 \cdot C}$ \\
+$C' = \frac{C}{l}$\\
+$L' = \frac{1}{c_m \cdot \sqrt{C'}}$\\
+$c_m= \frac{1}{\sqrt{L' \cdot C'}} = \frac{c_0}{\sqrt{\epsilon_r \cdot \mu_s}}$\\
 $X' = \frac{X}{l}$\\
 
-$k_0 = \frac{R_w}{R_w + R_i} $\\
+$k_0 = \frac{R_w}{R_i + R_w} $\\
 $r_a = \frac{R_a - R_w}{R_a + R_w} $\\
-$k_a = 1 + r_a = k_1$\\
+$k_a = 1 + r_a$\\
 $R_w \hat{=}$ WS der Leitung\\
 $R_i \hat{=}$ WS vor der Leitung\\
 $R_a \hat{=}$ WS nach der Leitung\\
-$U_q == U_i$\\
-$t_i \hat{=}$ High-Zeit\\
-Reflexion: $U_r(l,t) = r_a \cdot U_k(l,t)$\\
-Anfang: $U_k(0,t)=k_0 \cdot U_{q}(t)$\\
-Mitte/Ende:\\
-\phantom{ss} $U_k(x,t)= k_0 \cdot U_{q}(t-\Delta t)$\\
+$t_i \hat{=}$ High-Zeit / Halbperiode\\
+Einkopplung:\\
+\phantom{ss} $u_h(x,t)= k_0 \cdot u_{q}(t-\Delta t)$\\
 \phantom{sss}$\Delta t = \frac{l}{c} = \frac{l}{\lambda f}$\\
-Auskoppeln Gatter:\\
-\phantom{ss} $U_1(t) = k_a \cdot U_k(x,t) $\\
-\phantom{sssssssiiii}$= k_a\cdot k_0 \cdot U_q(t-\Delta t)$\\
-V Ende Leitung: $u_a = k_0 \cdot k_a \cdot u_q$\\
+Reflexion: $u_r(x,t) = r_a \cdot u_h(x,t)$\\
+Allgemein:\\
+\phantom{ss} $u(x,t) = u_h(x,t) + u_r(x,t)$\\
+\phantom{sssssssiss} $= k_a \cdot u_h(x,t)$\\
 
 LW-Leitung: $\alpha = \frac{L_P}{l}; [\alpha] = 1 \frac{dB}{m}$\\
-Lichtleistung: $L_P = 10 \cdot lg\frac{P_e}{P_a} dB$\\
+Lichtleistung: $L_P = 10dB \cdot \lg (\frac{P_e}{P_a})$\\
 \phantom{sssssississsssss} $L_P = l \cdot \alpha$\\
 \phantom{sssssississsssss}$ [L_P] = 1dB$\\
 
