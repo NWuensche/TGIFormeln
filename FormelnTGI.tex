@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage[top=1in, bottom=1.25in, left=1.25cm, right=1.25in]{geometry}
 
+\pagenumbering{gobble}% Remove page numbers
 
 \begin{document}
 
@@ -238,12 +239,14 @@ auszurechnen. \\
 - Parallelschaltung $\implies +$ \\
 - Reihenschaltung \hspace{0.1mm} $\implies \mathbf{\cdot}$ \\
 
+\underline{\textbf{Miscelaneous:}}\\
+Kreis: $A = \pi \cdot r^2$\\
+
 \end{minipage}
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
 
 \includegraphics[scale=0.3]{opv1.png}\\
-\includegraphics[scale=0.3]{opv2.png}
 \underline{\textbf{Logik:}}\\
 KDNF: Minterme(y=1) $\implies a\overline{b}c + ...$\\
 \phantom{sssi} $a=1 \to a, \hspace{2mm} b=0 \to \overline{b}$ \\
@@ -251,21 +254,22 @@ KKNF: Maxterme(y=0) $\implies (\overline{a}+b+\overline{c}) \cdot ...$\\
 \phantom{sssi} $a=1 \to \overline{a}, \hspace{2mm} b=0 \to b$ \\
 
 \textbf{KV-Diagramme:}\\
-Gray C., Rechtecke, übers. OK.\\
-Gray C:$(\overline{A} \overline{B}), (\overline{A}B), (AB), (A\overline{B})$\\
+Gray C: Rechtecke der Länge $2^k$\\
+Gray C: $(\overline{A} \overline{B}), (\overline{A}B), (AB), (A\overline{B})$\\
 Min. DNF: 1en verbinden\\
 Min. KNF: 0en, alle Literale negieren\\
 Logische Fkt.: $F = \overline{AB} \Rightarrow $ NAND \\
 Log./Schalt-Verknüpfung: $y = \overline{AB} $\\
 Nur NAND: $y = \overline{\overline{y}}$ \\
 \phantom{sssi} Keine +, 1 Neg. über ganzer Formel\\
-
-
+%
+\vspace{5cm} \\
+%
 \underline{\textbf{Multiplexer:}}\\
 OBDD: Nutze Shannonzerlegung\\
 - Variablenordnung \\
 - Pro Var. nach 0 und 1 aufspalten \\
-- Baum $\implies$ Multiplexernetz
+- Baum $\implies$ Multiplexernetz \\
 
 \underline{\textbf{Flip-Flop:}}\\
 Zeitsteuerung:\\ ((1)$|$(2)takt(zustands)$|$(flanken))\\$|$(N. takt) - gesteuertes FF\\
@@ -292,6 +296,7 @@ Transistoren: NAND: 4, D-FF: 14 \\
 ~~~~~~~
 \begin{minipage}{0.33\textwidth}
 
+\includegraphics[scale=0.3]{opv2.png} \\
 \underline{\textbf{Arten von Automaten:}}\\
 - Mealy: \textbf{A}usgang hängt von \textbf{E}ingang und Zustand \textbf{Q} ab \\
 - Moore: A hängt nur von Q ab \\
@@ -300,30 +305,27 @@ Transistoren: NAND: 4, D-FF: 14 \\
 - Flankengest. Oft Master-Slave \\
 
 \underline{\textbf{Synthese}}\\
-Zustandsgraph $\Rightarrow$ kodierung in FFs $\Rightarrow$ ZF-AFT: Kenne Q, Q+ $\Rightarrow$ FF-Eingänge+Ausgänge via KV ermitteln $\Rightarrow$ Schaltung aus ermittelten Formeln ableiten\\
+Zustandsgraph $\Rightarrow$ Kodierung in FFs $\Rightarrow$ ZF-AFT: Kenne Q, Q+ $\Rightarrow$ FF-Eingänge+Ausgänge via KV ermitteln $\Rightarrow$ Schaltung aus ermittelten Formeln ableiten\\
 
 \underline{\textbf{Zustandsgraph:}}\\
 - Ist im Prinzip totaler DFA\\
 - Evnt. Startzustand\\
 - K's(BZ-Code E's) als Zustände\\
 - Code getakt. Ausgänge als BZ\\
-- schreibe Code an jeden Zustand\\
+- Schreibe Code an jeden Zustand\\
 - Ungetakt. Ausgänge an Pfeile\\
 - Belegung der Eingänge an Pfeil\\
+- Standards für Ausgaben \\
 
 \underline{\textbf{One Hot Kodierung:}}\\
-Für jeden Zustand genau ein FF an. Falls (0,0,0,...) Startzustand, dann muss FF0 immer 1 sein, außer wenn Zustand 0 ist, dann ist alles 0
-\end{minipage}%
+Für jeden Zustand genau ein FF an. Falls (0,0,0,...) Startzustand, dann muss FF0 immer 1 sein, außer wenn Zustand 0 ist, dann ist alles 0. \\
 
-\vspace*{-0.3 cm}
 \underline{\textbf{Arten von Tabellen:}}\\
 - WW-Tabelle hat Eingänge und Ausgänge berechnet\\
 - ZF-Tabelle hat Eingänge, Zustand(Q) $|$ und Folgezustand (Q+)\\
 - ZÜ-Tabelle hat Zustand $\rightarrow$ Folgezustand(Q+) $|$ Eingänge\\
 -ZF+AT: Code der Q's ohne E(K),E's, Zustände(Q), FF-E(J,K) $|$, FolgeZ(Q+), Ausgänge\textbf{!Gegenw.!},K+\\
 \phantom{ss} J,K aus Formeln, Q+ aus J,K
+\end{minipage}
 
-
-\underline{\textbf{Misc}}\\
-Kreis: $A = \pi \cdot r^2$\\
 \end{document}
